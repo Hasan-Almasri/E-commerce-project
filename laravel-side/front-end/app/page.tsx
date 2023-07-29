@@ -1,43 +1,24 @@
+'use client'
 import MainSlider from "@/components/main slider/MainSlider"
 import React from "react"
-
-{/* <Image src="/1f04070f-5b18-4ffb-98af-0cf998ff1e7f.png" alt="" width="0" height="0" sizes="100vw"/>
-<Image src="/0768eade-7bd6-4b2f-adff-8e52da697824.png" alt="" width="0" height="0" sizes="100vw"/>
-<Image src="/1f04070f-5b18-4ffb-98af-0cf998ff1e7f.png" alt="" width="0" height="0" sizes="100vw"/>
-<Image src="/0768eade-7bd6-4b2f-adff-8e52da697824.png" alt="" width="0" height="0" sizes="100vw"/> */}
+import axios from "axios"
 
 export default function Home() {
 
-  return (
-    <main className="">
-      <MainSlider />
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>ss</h1>
-    </main>
-  )
+    const testRequest = async () => {
+        await axios.get("http://127.0.0.1:8000/api/categories")
+        .then(function(res) {
+            console.log(res)
+        })
+        .catch(function(err) {
+            console.log(err)
+        })
+    }
+
+    return (
+        <main className="">
+            <MainSlider />
+            <button onClick={testRequest} className="bg-red-400 p-4 my-4 ml-4">click</button>
+        </main>
+    )
 }
