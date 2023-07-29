@@ -19,11 +19,13 @@ return new class extends Migration
             $table->decimal('price', 8, 2);
             $table->decimal('discount_price', 8, 2)->nullable();
             $table->integer('quantity')->default(0);
-            $table->string('category_name');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
+            
+            
 
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+           
         });
     }
 

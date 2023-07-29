@@ -9,6 +9,7 @@ export default function Home() {
         await axios.get("http://127.0.0.1:8000/api/categories")
         .then(function(res) {
             console.log(res)
+            
         })
         .catch(function(err) {
             console.log(err)
